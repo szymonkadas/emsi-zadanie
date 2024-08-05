@@ -1,0 +1,122 @@
+:root {
+  --primary-bg-color: #f4f4f4;
+  --secondary-bg-color: #e0e0e0;
+  --tertiary-bg-color: #d9d9d9;
+  --hover-bg-color: #cccccc;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --border-color: #ccc;
+  --hover-text-color: #000;
+  --button-bg-color: #444;
+  --button-hover-bg-color: #555;
+  --list-bg-color: #eaeaea;
+  --list-border-color: #d0d0d0;
+
+  --default-padding: 16px;
+  --form-margin-vertical: 16px;
+
+  --border-radius: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-family: "Calibri", sans-serif;
+  color: var(--text-color);
+  background-color: var(--primary-bg-color);
+}
+
+#Lewy,
+#Prawy {
+  width: 100%;
+  padding: calc(var(--default-padding) * 1.5);
+}
+
+#Lewy {
+  grid-column: 1/2;
+  background-color: var(--secondary-bg-color);
+  min-height: 100dvh;
+}
+
+#Prawy {
+  grid-column: 2/3;
+  background-color: var(--primary-bg-color);
+}
+
+menu {
+  list-style: none;
+}
+
+menu li a {
+  display: block;
+  padding: var(--default-padding);
+  color: var(--text-color);
+  text-decoration: none;
+  background-color: var(--tertiary-bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+menu li a:hover,
+menu li a:focus {
+  background-color: var(--hover-bg-color);
+  color: var(--hover-text-color);
+}
+
+.kontener,
+#Prawy,
+label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-padding);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: calc(var(--default-padding) / 2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+label {
+  gap: calc(var(--default-padding) / 4);
+  color: var(--secondary-text-color);
+}
+
+.ol {
+  gap: calc(var(--default-padding) / 4);
+  list-style-type: decimal;
+  margin-left: 0;
+  padding: var(--default-padding);
+  padding-left: calc(var(--default-padding) * 2);
+  background-color: var(--list-bg-color);
+}
+
+.ol li {
+  padding: calc(var(--default-padding) / 4);
+  border-bottom: 1px solid var(--list-border-color);
+}
+
+.ol li:last-child {
+  border-bottom: none;
+}
+
+button {
+  padding: calc(var(--default-padding) / 2) var(--default-padding);
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
