@@ -1,0 +1,18 @@
+table,
+th,
+td {
+  border-style: solid;
+  border-color: var(--primary-bg-color);
+  border-width: 3px 2px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: calc(var(--default-padding) / 4);
+  padding-left: calc(var(--default-padding) / 2);
+}
+
+table {
+  background-color: var(--list-bg-color);
+}
