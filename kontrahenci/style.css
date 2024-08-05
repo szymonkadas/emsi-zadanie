@@ -1,0 +1,50 @@
+.panelSterowania {
+  display: flex;
+  gap: calc(var(--default-padding) * 2);
+}
+
+.modal {
+  position: absolute;
+  width: 40dvw;
+  left: 30dvw;
+  top: 15dvh;
+  padding: calc(var(--default-padding) * 2);
+  padding-top: calc(var(--default-padding) * 3);
+  border-color: var(--border-color);
+}
+
+#closeButton {
+  position: absolute;
+  top: var(--default-padding);
+  left: calc(100% - (var(--default-padding) * 3));
+  width: var(--default-padding);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: calc(var(--default-padding) * 2);
+  line-height: var(--default-padding);
+}
+
+#pełneDane {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+label input {
+  width: 100%;
+}
+
+.checkboxLabel {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--default-padding);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
