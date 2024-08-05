@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles/table.css" />
+  </head>
+  <body>
+    <div id="Lewy">
+      <menu>
+        <li><a href="../">Różne kontrolki HTML</a></li>
+        <li><a href="./">Tabela Pracowników</a></li>
+        <li><a href="../faktury/">Tabela Faktur VAT</a></li>
+        <li><a href="../delegacje/">Tabela Delegacji BD</a></li>
+        <li><a href="../kontrahenci/">Dane Kontrahentów</a></li>
+      </menu>
+    </div>
+    <div id="Prawy">
+      <h1>Tabela Pracowników</h1>
+      <div class="kontener kolorki">
+        <label>
+          Kolor 1:
+          <input type="color" id="color1" value="#FFDDC1" onchange="changeColors()" />
+        </label>
+        <label>
+          Kolor 2:
+          <input type="color" id="color2" value="#C1DDE6" onchange="changeColors()" />
+        </label>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Lp.</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Stanowisko</th>
+            <th>Data zatrudnienia</th>
+            <th>Ilość dni urlopowych</th>
+          </tr>
+        </thead>
+        <tbody id="employeesTableBody"></tbody>
+      </table>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

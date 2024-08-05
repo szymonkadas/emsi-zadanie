@@ -1,0 +1,87 @@
+<!-- POTEM PRZEKOPIUJ, STWÓRZ REPO, NOWE PLIKI ETC Z INNĄ DATĄ B) -->
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="Lewy">
+      <menu>
+        <li><a href="./">Różne kontrolki HTML</a></li>
+        <li><a href="./pracownicy/">Tabela Pracowników</a></li>
+        <li><a href="./faktury/">Tabela Faktur VAT</a></li>
+        <li><a href="./delegacje/">Tabela Delegacji BD</a></li>
+        <li><a href="./kontrahenci/">Dane Kontrahentów</a></li>
+      </menu>
+    </div>
+    <div id="Prawy">
+      <p class="kontener">
+        <h1>Dane Kontrahenta</h1>
+        <label>
+          NIP
+          <input type="text" placeholder="1234563218" required />
+        </label>
+        <label>
+          REGON
+          <input type="number" placeholder="123456785" step="1" required />
+        </label>
+        <label>
+          NAZWA
+          <input type="text" required />
+        </label>
+        <label>
+          DATA POWSTANIA
+          <input type="date" required />
+        </label>
+        <label>
+          ULICA
+          <input type="text" placeholder="ul. Kazimierza Iksińskiego" required />
+        </label>
+        <label>
+          NUMER DOMU
+          <input type="text" placeholder="20" />
+        </label>
+        <label>
+          NUMER MIESZKANIA
+          <input type="text" placeholder="20" />
+        </label>
+        <label>
+          UWAGI
+          <textarea></textarea>
+        </label>
+      </p>
+      <label>
+        Kolory:
+        <select>
+          <option>zielony</option>
+          <option>niebieski</option>
+          <option>szary</option>
+          <option>turkusowy</option>
+          <option>granatowy</option>
+          <option>czerwony</option>
+          <option>biały</option>
+        </select>
+      </label>
+      <label>
+        VAT
+        <select>
+          <option>ZW</option>
+          <option>NP</option>
+          <option>0%</option>
+          <option>3%</option>
+          <option>8%</option>
+          <option>23%</option>
+        </select>
+      </label>
+      <ol class="kontener ol">
+        <li>Element</li>
+        <li>Element</li>
+        <li>Element</li>
+      </ol>
+    </div>
+  </body>
+</html>

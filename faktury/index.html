@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/table.css" />
+  </head>
+  <body>
+    <div id="Lewy">
+      <menu>
+        <li><a href="../">Różne kontrolki HTML</a></li>
+        <li><a href="../pracownicy/">Tabela Pracowników</a></li>
+        <li><a href="./">Tabela Faktur VAT</a></li>
+        <li><a href="../delegacje/">Tabela Delegacji BD</a></li>
+        <li><a href="../kontrahenci/">Dane Kontrahentów</a></li>
+      </menu>
+    </div>
+    <div id="Prawy">
+      <h1>Tabela Faktur VAT</h1>
+      <table id="fakturyTable">
+        <thead>
+          <tr>
+            <th>Lp.</th>
+            <th>Opis</th>
+            <th>MPK</th>
+            <th>Kwota Netto</th>
+            <th>Ilość</th>
+            <th>VAT</th>
+            <th>Kwota Brutto</th>
+            <th>Wartość Netto</th>
+            <th>Wartość Brutto</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button onclick="highlightExpensiveItems()">Powyżej 1000,00 zł Netto</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

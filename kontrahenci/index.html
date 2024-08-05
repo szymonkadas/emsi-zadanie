@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles/table.css" />
+  </head>
+  <body>
+    <div id="Lewy">
+      <menu>
+        <li><a href="../">Różne kontrolki HTML</a></li>
+        <li><a href="../pracownicy/">Tabela Pracowników</a></li>
+        <li><a href="../faktury/">Tabela Faktur VAT</a></li>
+        <li><a href="../delegacje/">Tabela Delegacji BD</a></li>
+        <li><a href="./">Dane Kontrahentów</a></li>
+      </menu>
+    </div>
+    <div id="Prawy">
+      <h1>Dane Kontrahentów</h1>
+      <table id="kontrahenciTable">
+        <thead>
+          <tr>
+            <th>NIP</th>
+            <th>REGON</th>
+            <th>NAZWA</th>
+            <th>CZY PŁATNIK VAT</th>
+            <th>ULICA</th>
+            <!-- traktowany też jako numer budynku na potrzeby skryptów -->
+            <th>NUMER DOMU</th>
+            <th>NUMER MIESZKANIA</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <table id="filteredKontrahenciTable" class="hidden">
+        <thead>
+          <tr>
+            <th>NIP</th>
+            <th>REGON</th>
+            <th>NAZWA</th>
+            <th>CZY PŁATNIK VAT</th>
+            <th>ULICA</th>
+            <th>NUMER DOMU</th>
+            <th>NUMER MIESZKANIA</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="kontener">
+        <dialog role="dialog" aria-modal="true" class="modal">
+          <button id="closeButton" class="closeButton" onClick="handleCloseModal()" aria-label="Zamknij">
+            &times;
+          </button>
+
+          <div class="kontener hidden" id="pełneDane">
+            <h2>
+              <span class="editing hidden">Edytuj</span>
+              <span class="adding hidden">Wprowadź</span>
+              dane kontrahenta
+            </h2>
+            <input type="hidden" name="originalNip" value="" />
+            <label>
+              NIP
+              <input type="text" name="nip" placeholder="0000000000" />
+            </label>
+            <label>
+              REGON
+              <input type="text" name="regon" placeholder="000000000" />
+            </label>
+            <label>
+              Nazwa
+              <input type="text" name="nazwa" placeholder="Nazwa kontrahenta sp. z.o.o." />
+            </label>
+            <label class="checkboxLabel">
+              Czy płatnik VAT
+              <input type="checkbox" name="czy_platnik_vat" />
+            </label>
+            <label>
+              Ulica
+              <input type="text" name="ulica" placeholder="Ulica spokojna" />
+            </label>
+            <label>
+              Numer domu
+              <input type="text" name="numer_domu" placeholder="39" />
+            </label>
+            <label>
+              Numer mieszkania
+              <input type="text" name="numer_mieszkania" placeholder="4a" />
+            </label>
+            <label>
+              <button onClick="wykonajAkcjeNaKontrahencie()">Zapisz</button>
+            </label>
+          </div>
+
+          <div class="kontener hidden" id="wyszukajKontrahenta">
+            <p>
+              Wyszukaj kontrahenta po dokładnym NIP lub REGON. Jeśli nie znasz żadnej z tych wartości w całości, wpisz
+              nazwę kontrahenta i wyszukaj w tabeli docelowego kontrahenta. <br />
+              <span class="deleting hidden">Następnie usuń pożądanego kontrahenta z tabeli.</span>
+              <span class="editing hidden">Następnie zaznacz pożądanego kontrahenta z tabeli do edycji.</span>
+            </p>
+            <label>
+              NIP
+              <input type="text" name="nip" placeholder="0000000000" />
+            </label>
+            <label>
+              REGON
+              <input type="text" name="regon" placeholder="0000000000" />
+            </label>
+            <label>
+              Nazwa
+              <input type="text" name="nazwa" placeholder="Nazwa kontrahenta sp. z.o.o." />
+            </label>
+            <label>
+              <button onClick="wyszukajKontrahenta()">Szukaj</button>
+            </label>
+          </div>
+        </dialog>
+        <menu class="panelSterowania">
+          <li><button onClick="updateState('adding')">Dodawanie kontrahenta</button></li>
+          <li><button onClick="updateState('editing')">Edytuj kontrahenta</button></li>
+          <li><button onClick="updateState('deleting')">Usuń kontrahenta</button></li>
+        </menu>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
